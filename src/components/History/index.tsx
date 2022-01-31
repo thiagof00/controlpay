@@ -3,8 +3,11 @@ import logo from '../../assets/controlpay_logo.svg'
 import dash from '../../assets/graphic.svg'
 import clock from '../../assets/clock.svg'
 import person from '../../assets/person.svg'
+import { useTransactions } from "../../hooks/useTransactions";
 
 export function History(){
+    
+    const {transactions} = useTransactions()
     return (
         <Container>
             <MenuSide>
@@ -36,8 +39,9 @@ export function History(){
         </MenuSide>
 
         <Content>
-            <BoxTransaction>
-                <div className="typeIncome">
+            {transactions.map(transaction=>(
+                <BoxTransaction key={transaction.id} type={transaction.type}>
+                <div className="typeTransaction">
                 </div>
 
                 <div className="contentTransaction">
@@ -51,16 +55,22 @@ export function History(){
                         </tr>
 
                         <tr>
-                            <td>R$40,00</td>
-                            <td>Saída</td>
+                            <td>{new Intl.NumberFormat('pt-BR',{
+                                style:"currency",
+                                currency:"BRL"
+                            }).format(transaction.value)
+                            }
+                            </td>
+                            <td>{transaction.type == 'outcome' ? "Saída" : "Entrada"}</td>
                             <td>Thiago</td>
-                            <td>05/01/2022</td>
-                            <td>Compra no duckbill</td>
+                            <td>{transaction.date}</td>
+                            <td>{transaction.description}</td>
                         </tr>
 
                     </table>
                 </div>
             </BoxTransaction>
+            ))}
         </Content>
         </Container>
 

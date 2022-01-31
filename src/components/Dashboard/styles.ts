@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
 
-interface ValueTransactionProps{
-    type: string
-}
 
 
 export const Container = styled.div`
@@ -52,10 +49,12 @@ align-items: center;
 .boxIndividual{
     background: var(--cinza);
 
-    height: 35rem;
+    height: 90%;
     width: 22rem;
     
+
     margin-left: 2rem;
+
     margin-top:5rem;
 
     border-radius: 0.5rem;
@@ -71,54 +70,42 @@ align-items: center;
     
 
     .ListOfTransactions{
+       
         display:flex;
         flex-direction: column;
         padding-top:3.5rem;
-
+        padding-bottom:3.5rem;
+        
         .transaction{
-            display: flex;
-            flex-direction:row;
+    display: flex;
+    flex-direction:row;
 
-            justify-content: space-around;
+    justify-content: space-around;
 
-            .text{
-                display: flex;
-                flex-direction: column;
-                
-                #description{
-                    font-size: 0.8rem;
-                    color: #818181;
-                    padding-bottom:1rem;
-                }
-            }
-
-            .typeTransaction{
-                display: flex;
-                align-items: center;
-
-                padding-bottom: 2rem;
-            }
+    .text{
+        display: flex;
+        flex-direction: column;
+        
+        #description{
+            font-size: 0.8rem;
+            color: #818181;
+            padding-bottom:1rem;
         }
+    }
 
+    .typeTransaction{
+        display: flex;
+        align-items: center;
+
+        padding-bottom: 2rem;
+    }
+}
     }
 }
 
 
 
 `
-export const ValueTransaction = styled.div<ValueTransactionProps>`
-display: flex;
-flex-direction:row;
-
-font-size: 1.3rem;
-
-color: ${props => props.type == 'income' ? '#37DB08' : '#DB1F14'};
-
-align-items:center;
-
-
-`
-
 
 export const Values = styled.div`
 height: 100vh;

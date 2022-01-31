@@ -15,10 +15,6 @@ background: var(--cinza);
 
 height: 100%;
 
-display: flex;
-flex-direction: column;
-align-items: center;
-
 .react-modal-close{
     position: absolute;
 
@@ -28,6 +24,14 @@ align-items: center;
     border: 0;
 
     color: var(--cinza-claro);
+}
+
+form{
+
+display: flex;
+flex-direction: column;
+align-items: center;
+
 }
 
 input{
