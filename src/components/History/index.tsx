@@ -9,35 +9,6 @@ export function History(){
     
     const {transactions} = useTransactions()
     return (
-        <Container>
-            <MenuSide>
-            <div className="ContentLogo">
-            <img src={logo} alt="" />
-            </div>
-            <div className="Content">
-
-                <button className='buttons'>
-                    <a href="/">
-                    <img src={dash} alt="" />
-                    <p>Dashboard</p>
-                    </a>
-                </button>
-                <button className='buttons' >
-                    <a href="/history">
-                    <img src={clock} alt="" />
-                    <p>Histórico</p>
-                    </a>
-                </button>
-                <button className='buttons'>
-                    <a href="/users">
-                    <img src={person} alt="" />
-                    <p>Pessoas</p>
-                    </a>
-                    
-                </button>
-            </div>
-        </MenuSide>
-
         <Content>
             {transactions.map(transaction=>(
                 <BoxTransaction key={transaction.id} type={transaction.type}>
@@ -72,7 +43,6 @@ export function History(){
             </BoxTransaction>
             ))}
         </Content>
-        </Container>
 
     )
 }

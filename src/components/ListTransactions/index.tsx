@@ -9,7 +9,7 @@ interface LisTransactionsProps{
 }
 interface TransactionProps{
     id: string;
-    value: string;
+    value: number;
     type:string;
     description: string;
     idPerson: number;
@@ -34,7 +34,10 @@ export function LisTransactions({idPerson}:LisTransactionsProps){
                         <div className="transaction" key={transaction.id}>
                         <div className="text">
                             <ValueTransaction type={transaction.type}>
-                            <h3>R${transaction.value}</h3>
+                            <h3>{new Intl.NumberFormat('pt-BR', {
+                                style:'currency',
+                                currency:"BRL"
+                            }).format(transaction.value)}</h3>
                             <img src={transaction.type == "income" ? income : outcome} alt="" />
                             </ValueTransaction>
                             <p id="description">{transaction.description}</p>

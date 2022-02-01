@@ -16,7 +16,9 @@ createServer({
      {id:2,idPerson:0, value: 70, date:"24/04/2021",
      description:"Plantão trabalho", type:"income"},
      {id:3,idPerson:0, value: 7, date:"24/04/2021",
-     description:"telemoto", type:"outcome"}
+     description:"telemoto", type:"outcome"},
+     {id:4,idPerson:1, value: 320.87, date:"24/01/2022",
+     description:"contas", type:"outcome"}
     ],
     "people":[{
       id:0,
